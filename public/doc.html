@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./doc.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="root">
+        <div id="side-bar">
+            <div id="room">
+                <h2>Who is typing:</h2>
+                <h3 id="person-name"></h3>
+            </div>
+            <hr>
+            <div id="room">
+                <h1>Room:</h1>
+                <h3 id="room-name">Javascript</h3>
+            </div>
+            <hr>
+            <div id="users">
+                <h1>Users:</h1>
+                <ul id="all-users">
+                    <li>> Ram</li>
+                    <li>> Sham</li>
+                    <li>> Ram</li>
+                    <li>> Sham</li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+        <div id="wraper">
+            <textarea name="typing" id="typing" rows="80" placeholder="Start typing . . ."></textarea>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js" 
+    integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"></script>
+  <!-- we will have acccess to 'io' method in main.js because of this script tag -->
+  <script src="/socket.io/socket.io.js"></script> 
+  <script src="js/main.js"></script>
+</body>
+</html>
