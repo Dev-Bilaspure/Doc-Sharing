@@ -19,8 +19,11 @@ io.on('connection', socket => {
         console.log(user);
         socket.join(user.room);
         socket.emit('alertUser', 'Welcome to FakeGoogleDoc'); 
+        
+        
+
         socket.broadcast.to(user.room).emit('alertUser', `${username} has joined the chat`);
-    
+
         //Send users and room info to update the current users list
         console.log("userRoom hai: " + user.room);
         
@@ -28,7 +31,7 @@ io.on('connection', socket => {
           room: user.room, 
           users: getRoomUsers(user.room)
         })
-
+        io.to(user.room).emit('updateTitle', room);
     });
 
     socket.on('chatMessage', msg => {

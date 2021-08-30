@@ -21,6 +21,12 @@ socket.on('roomUsers', ({room, users}) => {
     outputRoomUsers(users);
 })
 
+socket.on('updateTitle', (room) => {
+    const currTitle = document.getElementById('titleRoom').innerText;
+    if(currTitle === 'SharedDoc')
+        document.getElementById('titleRoom').innerText=currTitle + " | " + room;
+})
+
 socket.on('alertUser', msg => { 
     // console.log(msg);
     // outputMessage(msg);
