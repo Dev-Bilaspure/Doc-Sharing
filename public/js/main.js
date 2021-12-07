@@ -6,7 +6,6 @@ const { username, room } = Qs.parse(location.search, {
     ignoreQueryPrefix: true
 });
 
-console.log(username, room);
 
 
 const socket = io();
@@ -16,7 +15,6 @@ socket.emit('joinRoom', { username, room });
 
 socket.on('roomUsers', ({room, users}) => {
     //DOM related methods
-    console.log("Mai yahan tu kahan");
     outputRoomName(room);
     outputRoomUsers(users);
 })
@@ -41,7 +39,6 @@ function outputRoomName(room) {
 }
 
 function outputRoomUsers(users) {
-    console.log("DDDDDDDD: " + users.username);
     userList.innerHTML = `${users.map(user => `<li>> ${user.username}</li>`).join('')}`
 }
 
@@ -50,7 +47,6 @@ textArea.addEventListener('input', (e) => {
 })
 
 socket.on('message', (obj) => {
-    console.log(obj.userKaNaam  + " is typing");
     document.getElementById('person-name').innerText = obj.userKaNaam;
     textArea.value=obj.msg;
     

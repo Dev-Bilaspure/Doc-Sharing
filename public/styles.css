@@ -19,16 +19,18 @@ body {
   height: 45px;
   margin-bottom: 20px;
   border: none;
-  background: rgb(121, 121, 121);
-  color: rgb(255, 255, 255);
+  background: rgb(41, 41, 41);
+  color: white;
   padding-left: 20px;
   border-radius: 10px;
+  font-weight: 700;
 }
 #room {
   width: 70%;
   height: 45px;
   color: rgb(255, 255, 255);
-  background: rgb(121, 121, 121);
+  font-weight: 700;
+  background: rgb(41, 41, 41);
   margin-bottom: 20px;
   border: none;
   padding-left: 20px;

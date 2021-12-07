@@ -14,9 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 io.on('connection', socket => {
 
     socket.on('joinRoom', ({ username, room }) => {
-        console.log(socket.id + 'dddd');
         const user = userJoin(socket.id, username, room);
-        console.log(user);
         socket.join(user.room);
         socket.emit('alertUser', 'Welcome to FakeGoogleDoc'); 
         
@@ -25,7 +23,6 @@ io.on('connection', socket => {
         socket.broadcast.to(user.room).emit('alertUser', `${username} has joined the chat`);
 
         //Send users and room info to update the current users list
-        console.log("userRoom hai: " + user.room);
         
         io.to(user.room).emit('roomUsers', {
           room: user.room, 
@@ -47,7 +44,6 @@ io.on('connection', socket => {
         const user = userLeave(socket.id);
 
         if(user) {
-          console.log("hojahojaohiija");
           // io.to(user.room).emit('alterUser', `${user.username} has left the chat`);
           socket.broadcast.to(user.room).emit('alertUser', `${user.username} has left the chat`);
 

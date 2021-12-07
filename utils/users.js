@@ -2,9 +2,7 @@ let users = [];
 
 function userJoin(id, username, room) {
     const newuser = {id, username, room};
-    console.log(newuser);
     users.push(newuser);
-    console.log(users);
     return(newuser);
 }
 
